@@ -1,0 +1,39 @@
+---
+import {Quote} from "lucide-svelte";
+
+interface TestimonialProps {
+  content: string;
+  person: string;
+  role: string;
+  avatar: string;
+}
+
+const {content, person, role, avatar} = Astro.props as TestimonialProps;
+---
+
+<div
+  class='border border-gray-700/30 bg-gray-800/40 backdrop-blur-sm rounded-xl p-8 text-center transition duration-300 ease-in-out hover:bg-gray-800/60 hover:border-gray-600/40 hover:shadow-lg hover:shadow-gray-900/20'
+>
+  <div>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      class='w-8 h-8 mx-auto text-gray-400'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      stroke-width='1.5'
+    >
+      <Quote class='size-16' />
+      <p class='mt-8 text-gray-200 leading-relaxed'>{content}</p>
+    </svg>
+    <div class='relative mt-8'>
+      <img
+        class='rounded-full mx-auto h-32 w-32 object-cover ring-2 ring-gray-700/50'
+        src={avatar}
+        alt='Avatar'
+      />
+    </div>
+    <p class='font-medium text-gray-100 mt-4'>{person}</p>
+    <p class='text-indigo-400'>{role}</p>
+  </div>
+</div>

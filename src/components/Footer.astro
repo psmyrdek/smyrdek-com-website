@@ -1,0 +1,41 @@
+---
+const links = [
+  {
+    title: "Przeprogramowani",
+    href: "https://przeprogramowani.pl",
+  },
+  {
+    title: "Opanuj.AI",
+    href: "https://opanuj.ai",
+  },
+  {
+    title: "Contact",
+    href: "mailto:przemek.smyrdek@gmail.com",
+  },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class='bg-gray-900/50 backdrop-blur-sm border-t border-gray-800/30'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+    <nav
+      class='flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8'
+    >
+      {
+        links.map(({title, href}) => (
+          <a
+            href={href}
+            class='text-gray-400 hover:text-gray-300 transition-colors duration-200'
+          >
+            {title}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class='mt-8 text-center text-gray-400'>
+      <p>&copy; {currentYear} Przemek Smyrdek. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

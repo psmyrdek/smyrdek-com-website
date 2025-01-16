@@ -1,0 +1,30 @@
+---
+import profileImg from "../assets/profiles/przemek.jpg";
+import SocialIcons from "./SocialIcons.astro";
+
+const lead = "Founder, Full-Stack Product Engineer & Content Producer";
+---
+
+<div class='relative isolate overflow-hidden'>
+  <div
+    class='mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-8 lg:py-20 flex flex-col items-center text-center relative'
+  >
+    <div class='relative'>
+      <img
+        src={profileImg.src}
+        alt='Przemek Smyrdek'
+        class='w-[20rem] rounded-xl bg-gray-800/40 object-cover shadow-2xl ring-1 ring-gray-700/30 backdrop-blur-sm mb-8 relative z-10'
+      />
+      <img
+        src={profileImg.src}
+        alt=''
+        class='absolute top-0 left-1/2 -translate-x-1/2 w-[24rem] rounded-xl blur-2xl opacity-80 -z-10'
+      />
+    </div>
+    <h1 class='text-4xl font-bold tracking-tight text-white sm:text-6xl'>
+      Przemek Smyrdek
+    </h1>
+    <p class='mt-6 text-lg leading-8 text-gray-300'>{lead}</p>
+    <SocialIcons />
+  </div>
+</div>

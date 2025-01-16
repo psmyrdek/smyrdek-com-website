@@ -1,0 +1,72 @@
+---
+import {YoutubeIcon} from "lucide-svelte";
+
+interface Video {
+  id: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  videos?: Video[];
+}
+
+const {
+  videos = [
+    {
+      id: "knjzEcgcRT0",
+      title: "Astro 5 - Getting started",
+      description:
+        "Astro 5 is the next generation of Astro, a static site builder for modern web development.",
+    },
+    {
+      id: "fRBCYhFKtKA",
+      title: "GitHub Actions with GPT-4",
+      description:
+        "How I used GPT-4 to debug my CI/CD pipeline and fix a bug in my code.",
+    },
+    {
+      id: "ZZwudNlpLIk",
+      title: "GitHub Copilot - Agentic frontend",
+      description:
+        "Real-life scenario of collaborating with GitHub Copilot to build social components",
+    },
+  ],
+} = Astro.props;
+---
+
+<div class='max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8'>
+  <div class='text-center'>
+    <h2 class='text-3xl font-bold text-gray-100'>Featured Videos</h2>
+    <p class='mt-4 text-xl text-gray-400'>
+      Producing high quality video content since 2019
+    </p>
+  </div>
+
+  <div class='mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+    {
+      videos.map((video) => (
+        <div class='bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg overflow-hidden'>
+          <div class='relative pt-[56.25%]'>
+            <iframe
+              class='absolute top-0 left-0 w-full h-full'
+              src={`https://www.youtube.com/embed/${video.id}`}
+              title={video.title}
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowfullscreen
+            />
+          </div>
+          <div class='py-6'>
+            <div class='flex items-center'>
+              <YoutubeIcon class='w-5 h-5 text-gray-400' />
+              <h3 class='ml-2 text-lg font-medium text-gray-200'>
+                {video.title}
+              </h3>
+            </div>
+            <p class='mt-4 text-gray-400'>{video.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

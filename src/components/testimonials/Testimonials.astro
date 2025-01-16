@@ -1,0 +1,82 @@
+---
+import Testimonial from "./Testimonial.astro";
+
+import arturImg from "../../assets/profiles/askowronski.jpeg";
+import kellyImg from "../../assets/profiles/kfang.jpeg";
+import wojciechImg from "../../assets/profiles/wdobija.jpeg";
+import margauxImg from "../../assets/profiles/mmuller.jpeg";
+import krzysztofImg from "../../assets/profiles/krzysztof.jpg";
+
+const testimonials = [
+  {
+    content:
+      "Przemek is an incredible professional who is able to bring technology and business together. Throughout our collaboration at SmartRecruiters, Przemek brought creative solutions and fresh ideas to solve complex user problems. I trust both his technical expertise and strong business instincts. I've always enjoyed working together with him and would do so again in a heartbeat.",
+    person: "Kelly Fang",
+    role: "Product Manager - Stripe",
+    avatar: kellyImg.src,
+  },
+  {
+    content:
+      "Przemek is one of the best engineers I've had the opportunity to meet during my career. He's a great speaker, always eager to share his knowledge and experience with others (both with the team and our Community), being open to change and constant learning. The trait that makes him stand out is pragmatism and the ability to look at technology critically.",
+    person: "Artur Skowroński",
+    role: "Head of Engineering - Virtus Lab",
+    avatar: arturImg.src,
+  },
+  {
+    content:
+      "Przemek is an extremely talented and communicative engineer who lives programming every day and is 100% committed to everything he does! He keeps up with the world of programming, and his activity on Przeprogramowani can only confirm the enthusiasm and ambition with which he approaches what he does. He can share his knowledge in a very simple, accessible, often unique and creative way.",
+    person: "Wojciech Dobija",
+    role: "Software Engineer - Bidroom",
+    avatar: wojciechImg.src,
+  },
+  {
+    content:
+      "I had the pleasure to work hand-in-hand with Przemek for 3 years and would strongly recommend him to any business. He has a rare combination of great engineering skills, strong product and business sense, attention to details and collaboration instincts. He fostered a solid Product / Design / Engineering partnership by creating an environment of trust, participating in Product Market Fit strategy, sharing knowledge, which allowed us to have a strong business impact together.",
+    person: "Margaux Muller",
+    role: "Group Product Manager - Payfit",
+    avatar: margauxImg.src,
+  },
+];
+
+const finalTestimonial = {
+  content:
+    "Getting to the next level in the programming profession is not necessarily just knowing the next framework. What else is important? Przemek talks about this in his own LevelUp course. I had the opportunity to go through his materials and I fully agree with the selection of topics he touched on. Accessible form, without unnecessary beating around the bush. Time and money well invested. I recommend it!",
+  person: "Krzysztof Kempiński",
+  role: "IT Podcaster & Content Creator",
+  avatar: krzysztofImg.src,
+};
+---
+
+<div>
+  <div class='max-w-screen-xl mx-auto pb-12 px-4 sm:px-6 lg:px-8'>
+    <div class='text-center'>
+      <h2 class='text-3xl font-bold text-gray-100'>What others say</h2>
+      <p class='mt-4 text-xl text-gray-400'>
+        Feedback from people I've worked with.
+      </p>
+    </div>
+    <div
+      class='mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0'
+    >
+      {
+        testimonials
+          .slice(0, 2)
+          .map((testimonial) => <Testimonial {...testimonial} />)
+      }
+    </div>
+
+    <div
+      class='mt-6 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0'
+    >
+      {
+        testimonials
+          .slice(2)
+          .map((testimonial) => <Testimonial {...testimonial} />)
+      }
+    </div>
+
+    <div class='mt-12'>
+      <Testimonial {...finalTestimonial} />
+    </div>
+  </div>
+</div>
