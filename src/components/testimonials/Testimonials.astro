@@ -1,6 +1,6 @@
 ---
 import Testimonial from "./Testimonial.astro";
-
+import SectionHeader from "../SectionHeader.astro";
 import arturImg from "../../assets/profiles/askowronski.jpeg";
 import kellyImg from "../../assets/profiles/kfang.jpeg";
 import wojciechImg from "../../assets/profiles/wdobija.jpeg";
@@ -49,12 +49,11 @@ const finalTestimonial = {
 
 <div>
   <div class='max-w-screen-xl mx-auto pb-12 px-4 sm:px-6 lg:px-8'>
-    <div class='text-center'>
-      <h2 class='text-3xl font-bold text-gray-100'>What others say</h2>
-      <p class='mt-4 text-xl text-gray-400'>
-        Feedback from people I've worked with.
-      </p>
-    </div>
+    <SectionHeader
+      title='What others say'
+      subtitle="Feedback from people I've worked with."
+    />
+
     <div
       class='mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0'
     >
